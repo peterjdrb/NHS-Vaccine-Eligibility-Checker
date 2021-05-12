@@ -1,4 +1,6 @@
 const puppeteer = require('puppeteer');
+const notifier = require('node-notifier');
+
 const data = require('../data.json');
 
 module.exports.NHSVaccine = async () => {
@@ -38,11 +40,17 @@ module.exports.NHSVaccine = async () => {
     const dom = document.querySelector('h1')
     return dom.innerText
     })
-    console.log(heading)
+
     if (heading === 'You are not currently eligible to book through this service') {
-        console.log('Not yet ....');  
+        notifier.notify({
+            title: 'Not yet :(',
+            message: "You're not quire ready to get your vaccine just yet"
+          });
     } else {
-        console.log('Go get vaccinated!');
+        notifier.notify({
+            title: 'Breaking News!',
+            message: "You might be eligible to get a vaccine. Go to the nhs website to check!",
+          });
     }
 
     await browser.close();
