@@ -1,0 +1,10 @@
+{
+    "firstName": "John",
+    "surname": "Doe",
+    "dob": {
+        "day": "12",
+        "month": "05",
+        "year": "2001"
+    },
+    "postcode": "AB12CD"
+}
