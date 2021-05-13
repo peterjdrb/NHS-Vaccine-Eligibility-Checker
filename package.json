@@ -7,10 +7,9 @@
     "start": "node src/index.js"
   },
   "author": "",
-  "license": "ISC",
   "dependencies": {
-    "node-notifier": "^9.0.1",
-    "openurl": "^1.1.1",
-    "puppeteer": "^9.1.1"
+    "node-notifier": "9.0.1",
+    "openurl": "1.1.1",
+    "puppeteer": "9.1.1"
   }
 }

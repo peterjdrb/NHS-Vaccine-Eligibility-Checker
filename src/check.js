@@ -44,19 +44,19 @@ module.exports.NHSVaccine = async () => {
 
     if (heading === 'You are not currently eligible to book through this service') {
         notifier.notify({
-            title: 'Not yet :(',
+            title: 'Not yet',
             message: "You're not quire ready to get your vaccine just yet"
           });
 
     } else {
         notifier.notify({
-            title: 'Breaking News!',
+            title: 'Check the website!',
             message: "You might be eligible to get a vaccine. Go to the nhs website to check!",
           });
     }
 
     notifier.on('click', function (notifierObject, options, event) {
         require("openurl").open("https://www.nhs.uk/book-a-coronavirus-vaccination/do-you-have-an-nhs-number")
-      });
+    });
 
 }; 
